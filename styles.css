@@ -83,6 +83,41 @@ section{
 	margin: 0;
 	margin-top: 10px;
 	min-height: 30px;
+	position: relative;
+}
+
+input[type="checkbox"]{
+	display: none;
+}
+
+input[type="checkbox"] + label{
+	display: block;
+	width: 300px;
+	height: 25px;
+	/* border: 1px solid #000; */
+	position: absolute;
+}
+
+input[type="checkbox"]:checked ~ p{
+	display: block;
+}
+
+input[type="checkbox"]:checked ~ a{
+	color: var(--Very-dark-desaturated-blue);
+	font-weight: 700;
+}
+
+input[type="checkbox"]:checked ~ a>img[alt="Arrow"]{
+	transform: rotate(180deg);
+	transition: all 0.5s;
+}
+
+label[for^="checkbox"]{
+	cursor: pointer;
+}
+
+label:hover ~ a{
+	color: var(--Soft-red);
 }
 
 .FAQ a{
@@ -92,6 +127,12 @@ section{
 
 .FAQ a:hover{
 	color: var(--Soft-red);
+}
+
+img[alt="Arrow"]{
+	transition: all 0.5s;
+	float: right;
+    padding-top: 4px;
 }
 
 .FAQ p{
@@ -176,55 +217,3 @@ section{
 
 }
 
-
-@media screen and (max-width: 700px){}
-
-
-
-
-.accordion{
-	position: relative;
-}
-
-label{
-	cursor: pointer;
-}
-
-label:hover ~ a{
-	color: var(--Soft-red);
-}
-.space{
-	padding-left: 20px;
-}
-
-img[alt="Arrow"]{
-	transition: all 0.5s;
-	float: right;
-    padding-top: 4px;
-}
-
-input[type="checkbox"]{
-	display: none;
-}
-
-input[type="checkbox"] + label{
-	display: block;
-	width: 300px;
-	height: 25px;
-	/* border: 1px solid #000; */
-	position: absolute;
-}
-
-input[type="checkbox"]:checked ~ p{
-	display: block;
-}
-
-input[type="checkbox"]:checked ~ a{
-	color: var(--Very-dark-desaturated-blue);
-	font-weight: 700;
-}
-
-input[type="checkbox"]:checked ~ a>img[alt="Arrow"]{
-	transform: rotate(180deg);
-	transition: all 0.5s;
-}
